@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+     
+  <description>good grief Core tags</description>
+  <display-name>good grief Core</display-name>
+  <tlib-version>1.2</tlib-version>
+  <short-name>g</short-name>
+  <uri>http://grief.kodestruktor.de/core</uri>
+
+  <tag>
+    <description>Renders a link tag pointing to a static or dynamically versioned resource.</description>
+    <name>style</name>
+    <tag-class>de.kodestruktor.grief.core.tag.Style</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>The relative path to the stylesheet located in /src/main/webapp/[resources dir]/[static/revision dir]/[style dir]</description>
+      <name>uri</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>      
+    <attribute>
+      <description>The id attribute of this element (optional).</description>
+      <name>id</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>                  
+    <attribute>
+      <description>Defines if this is a static or versioned stylesheet (optional, defaults to 'false').</description>
+      <name>staticResource</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+  </tag>
+  
+  <tag>
+    <description>Renders a script tag pointing to a static or dynamically versioned resource.</description>
+    <name>script</name>
+    <tag-class>de.kodestruktor.grief.core.tag.Script</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>The relative path to the script file located in /src/main/webapp/[resources dir]/[static/revision dir]/[script dir]</description>
+      <name>uri</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>      
+    <attribute>
+      <description>The id attribute of this element (optional).</description>
+      <name>id</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>                  
+    <attribute>
+      <description>Defines if this script should be loaded asynchronously (optional, defaults to 'false').</description>
+      <name>async</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+    <attribute>
+      <description>Defines if this is a static or versioned script (optional, defaults to 'false').</description>
+      <name>staticResource</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+  </tag>
+  
+  <tag>
+    <description>Renders an image tag pointing to a static or dynamically versioned resource.</description>
+    <name>image</name>
+    <tag-class>de.kodestruktor.grief.core.tag.Image</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>The relative path to the image file located in /src/main/webapp/[resources dir]/[static/revision dir]/[image dir]</description>
+      <name>uri</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>      
+    <attribute>
+      <description>The id attribute of this element (optional).</description>
+      <name>id</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>                  
+    <attribute>
+      <description>The CSS classes to apply to this element (optional).</description>
+      <name>cssClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+    <attribute>
+      <description>The alt attribute of this element (optional).</description>
+      <name>alt</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+    <attribute>
+      <description>The title attribute of this element (optional).</description>
+      <name>title</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>  
+    <attribute>
+      <description>Defines if this is a static or versioned image (optional, defaults to 'false').</description>
+      <name>staticResource</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+  </tag>
+  
+  <tag>
+    <description>Renders a favicon tag pointing to a static or dynamically versioned resource.</description>
+    <name>favicon</name>
+    <tag-class>de.kodestruktor.grief.core.tag.Favicon</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>The relative path to the icon file located in /src/main/webapp/[resources dir]/[static/revision dir]/[image dir]</description>
+      <name>uri</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>      
+    <attribute>
+      <description>Defines if this is a static or versioned icon (optional, defaults to 'false').</description>
+      <name>staticResource</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+  </tag>
+  
+  <tag>
+    <description>Provides all constants of a given class in a variable.</description>
+    <name>constants</name>
+    <tag-class>de.kodestruktor.grief.core.tag.Constants</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>The name of the class whose constants to expose.</description>
+      <name>className</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>  
+    <attribute>
+      <description>The name of the variable to hold the constants.</description>
+      <name>var</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>                      
+  </tag>
+  
+  <tag>
+    <description>A pagination snippet generated for passed Spring Data page objects.</description>
+    <name>pagination</name>
+    <tag-class>de.kodestruktor.grief.core.tag.Pagination</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>The Spring Data page object, containing the paged content and it'S boundaries.</description>
+      <name>page</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>The URL parameter name for passing the page size (optional, defaults to 'size').</description>
+      <name>pageSizeParam</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>The URL parameter name for passing the page number (optional, defaults to 'page').</description>
+      <name>pageNumberParam</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>A resolvable message code for the 'prev' buttons label (optional, defaults to 'grief.pagiantion.prev').</description>
+      <name>prevCode</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>A resolvable message code for the 'next' buttons label (optional, defaults to 'grief.pagiantion.next').</description>
+      <name>nextCode</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <description>The URI pointing to the paged resource.</description>
+      <name>uri</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>      
+    <attribute>
+      <description>A CSS class for the enclosing list element.</description>
+      <name>cssClass</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+    <attribute>
+      <description>An id for the enclosing list element.</description>
+      <name>id</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <description>Renders the configured version number and/or revision.</description>
+    <name>version</name>
+    <tag-class>de.kodestruktor.grief.core.tag.Version</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
+      <description>Defines how the information will be rendered. Options are 'meta', 'content' or 'comment'.</description>
+      <name>style</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>  
+    <attribute>
+      <description>Defines what information will be rendered. Options are 'version', 'revision' or 'both'.</description>
+      <name>type</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>                      
+  </tag>
+</taglib>
