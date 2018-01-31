@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.org/codeporn/grief-core.svg?branch=master)](https://travis-ci.org/codeporn/grief-core)
+[![Build Status](https://travis-ci.org/codeporn/grief-core.svg?branch=master)](https://travis-ci.org/codeporn/grief-core) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.kodestruktor.grief/grief-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.kodestruktor.grief/grief-core)
