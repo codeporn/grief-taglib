@@ -21,7 +21,7 @@
   <scm>
     <connection>scm:git:https://github.com/codeporn/grief-core.git</connection>
     <developerConnection>scm:git:https://github.com/codeporn/grief-core.git</developerConnection>
-    <url>https://svn.kodestruktor.de/grief-core/trunk</url>
+    <url>https://github.com/codeporn/grief-core</url>
   </scm>
   
   <developers>
