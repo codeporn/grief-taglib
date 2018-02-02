@@ -8,7 +8,7 @@
   
   <name>good grief TagLib</name>
   <description>TagLib easing the everyday struggle in Spring projects.</description>
-  <url>http://grief.kodestruktor.de/</url>
+  <url>https://grief.kodestruktor.de/</url>
   
   <licenses>
     <license>
@@ -19,8 +19,8 @@
   </licenses>
   
   <scm>
-    <connection>scm:svn:https://svn.kodestruktor.de/grief-core/trunk</connection>
-    <developerConnection>scm:svn:https://svn.kodestruktor.de/grief-core/trunk</developerConnection>
+    <connection>scm:git:https://github.com/codeporn/grief-core.git</connection>
+    <developerConnection>scm:git:https://github.com/codeporn/grief-core.git</developerConnection>
     <url>https://svn.kodestruktor.de/grief-core/trunk</url>
   </scm>
   
@@ -61,7 +61,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>1.7.21</version>
+      <version>1.7.25</version>
     </dependency>
     
     <dependency>
