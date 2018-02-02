@@ -18,7 +18,6 @@ import de.kodestruktor.grief.core.util.ManifestUtil;
 /**
  * Renders the applications version and/or revision based on the parameters set.
  *
- * @version $Id: Version.java 27 2015-09-29 08:57:09Z christoph $
  * @author Christoph Wende
  */
 public class Version extends RequestContextAwareTag {

@@ -22,7 +22,6 @@ import de.kodestruktor.grief.core.util.GriefConstants;
  * where <code>[rootPath]</code> would be the root path of the application, configured in the base application and <code>[revNo]</code> would be the
  * current SVN revision number. An <code>id</code> attribute can be passed optionally.
  *
- * @version $Id: Style.java 27 2015-09-29 08:57:09Z christoph $
  * @author Christoph Wende
  */
 public class Style extends RequestContextAwareTag {

@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 /**
  * Utility for retrieving information from the manifest based on the current request.
  *
- * @version $Id: ManifestUtil.java 27 2015-09-29 08:57:09Z christoph $
  * @author Christoph Wende
  */
 public class ManifestUtil {

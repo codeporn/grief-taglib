@@ -29,7 +29,6 @@ import de.kodestruktor.grief.core.util.GriefConstants;
  * <br>
  * Also see {@link GriefConstants} for configuration options to manipulate the resource directories.
  *
- * @version $Id: Image.java 36 2016-11-07 14:34:04Z christoph $
  * @author Christoph Wende
  * @see GriefConstants
  */

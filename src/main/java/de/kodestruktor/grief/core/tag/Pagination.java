@@ -30,7 +30,6 @@ import de.kodestruktor.grief.core.util.GriefConstants;
  *
  * @param <T>
  *          type which is delivered by page (e.g. User objects)
- * @version $Id: Pagination.java 28 2016-10-14 13:46:41Z christoph $
  * @author Christoph Wende
  */
 

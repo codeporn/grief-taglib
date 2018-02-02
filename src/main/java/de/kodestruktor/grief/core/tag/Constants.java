@@ -15,7 +15,6 @@ import org.springframework.web.servlet.tags.RequestContextAwareTag;
 /**
  * Exposes all constants of a given class to the {@link ServletContext} and thus making them usable in JSPs.
  *
- * @version $Id: Constants.java 37 2016-11-10 12:19:30Z christoph $
  * @author Christoph Wende
  */
 public class Constants extends RequestContextAwareTag {

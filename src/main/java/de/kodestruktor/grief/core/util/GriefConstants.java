@@ -15,7 +15,6 @@ import de.kodestruktor.grief.core.tag.Version;
 /**
  * Constants used in grief internally.
  *
- * @version $Id: GriefConstants.java 37 2016-11-10 12:19:30Z christoph $
  * @author Christoph Wende
  */
 public final class GriefConstants {

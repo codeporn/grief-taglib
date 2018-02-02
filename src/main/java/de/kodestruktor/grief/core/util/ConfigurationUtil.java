@@ -11,7 +11,6 @@ import org.springframework.web.servlet.support.RequestContext;
 /**
  * Utility methods making use of configuration; either the artifact ones or the configuration of the enclosing application.
  *
- * @version $Id: ConfigurationUtil.java 27 2015-09-29 08:57:09Z christoph $
  * @author Christoph Wende
  */
 public class ConfigurationUtil {

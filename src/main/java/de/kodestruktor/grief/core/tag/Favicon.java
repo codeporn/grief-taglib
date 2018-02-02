@@ -32,7 +32,6 @@ import de.kodestruktor.grief.core.util.GriefConstants;
  * <br>
  * Also see {@link GriefConstants} for configuration options to manipulate the resource directories.
  *
- * @version $Id: Favicon.java 37 2016-11-10 12:19:30Z christoph $
  * @author Christoph Wende
  * @see GriefConstants
  */
