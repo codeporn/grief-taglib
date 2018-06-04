@@ -1,72 +1,30 @@
-package de.kodestruktor.grief.core.util;
+package de.kodestruktor.grief.taglib.property;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import de.kodestruktor.grief.core.tag.Favicon;
-import de.kodestruktor.grief.core.tag.Image;
-import de.kodestruktor.grief.core.tag.Pagination;
-import de.kodestruktor.grief.core.tag.Script;
-import de.kodestruktor.grief.core.tag.Style;
-import de.kodestruktor.grief.core.tag.Version;
+import de.kodestruktor.grief.taglib.tag.Favicon;
+import de.kodestruktor.grief.taglib.tag.Image;
+import de.kodestruktor.grief.taglib.tag.Pagination;
+import de.kodestruktor.grief.taglib.tag.Script;
+import de.kodestruktor.grief.taglib.tag.Style;
+import de.kodestruktor.grief.taglib.tag.Version;
 
 /**
  * Constants used in grief internally.
  *
  * @author Christoph Wende
  */
-public final class GriefConstants {
+public final class GriefTaglibProperty {
 
   /**
    * Empty private constructor to avoid instantiation.
    */
-  private GriefConstants() {
+  private GriefTaglibProperty() {
     // Here be dragons...
   }
-
-  /**
-   * Property that may be set in the manifest file of the application using grief. <br>
-   * Manifest attribute name "Implementation-Build"
-   *
-   * @see ManifestUtil
-   * @see Version
-   */
-  public static final String MANIFEST_IMPLEMENTATION_BUILD = "Implementation-Build";
-
-  /**
-   * Property that may be set in the manifest file of the application using grief. <br>
-   * Manifest attribute name "Implementation-Version"
-   *
-   * @see ManifestUtil
-   * @see Version
-   */
-  public static final String MANIFEST_IMPLEMENTATION_VERSION = "Implementation-Version";
-
-  /**
-   * Property that may be set in the configuration of the application using grief. <br>
-   * This should hold the root path of the application, e.g.:<br>
-   * <br>
-   * <code>grief.parent.application.root=/my-app</code><br>
-   * <br>
-   * if the application is running at <em>http://my-domain.org/my-app</em>
-   *
-   * @see Image
-   * @see Script
-   * @see Style
-   */
-  public static final String GRIEF_PROP_APP_ROOT = "grief.parent.application.root";
-
-  /**
-   * Property that may be set in the configuration of the application using grief. <br>
-   * This should hold the version of the application, e.g.:<br>
-   * <br>
-   * <code>grief.parent.application.version=0.9.2</code>
-   *
-   * @see Version
-   */
-  public static final String GRIEF_PROP_APP_VERSION = "grief.parent.application.version";
 
   static {
     final Map<Pattern, String> map = new HashMap<>(2);
@@ -219,7 +177,7 @@ public final class GriefConstants {
   /**
    * Property that may be set in the configuration of the application using grief. <br>
    * Configures the base directory for <b>static</b> web resources, relative to the resources basedir configured in
-   * {@link GriefConstants#RESOURCE_PROP_BASEDIR_RESOURCES}. <br>
+   * {@link GriefTaglibProperty#RESOURCE_PROP_BASEDIR_RESOURCES}. <br>
    * <br>
    * Example: <br>
    * <code>grief.resource.dir.base.static=/static</code>
@@ -233,7 +191,7 @@ public final class GriefConstants {
   /**
    * Property that may be set in the configuration of the application using grief. <br>
    * Configures the prefix for the <b>versioned</b> web resources base directory, relative to the resources basedir configured in
-   * {@link GriefConstants#RESOURCE_PROP_BASEDIR_RESOURCES}. <br>
+   * {@link GriefTaglibProperty#RESOURCE_PROP_BASEDIR_RESOURCES}. <br>
    * <br>
    * Example: <br>
    * <code>grief.resource.dir.version.prefix=/r</code>
@@ -251,8 +209,8 @@ public final class GriefConstants {
    * Example: <br>
    * <code>grief.resource.dir.image=/images</code>
    *
-   * @see GriefConstants#RESOURCE_PROP_BASEDIR_RESOURCES
-   * @see GriefConstants#RESOURCE_PROP_VERSIONDIR_PREFIX
+   * @see GriefTaglibProperty#RESOURCE_PROP_BASEDIR_RESOURCES
+   * @see GriefTaglibProperty#RESOURCE_PROP_VERSIONDIR_PREFIX
    * @see Image
    * @see Script
    * @see Style
@@ -266,8 +224,8 @@ public final class GriefConstants {
    * Example: <br>
    * <code>grief.resource.dir.image=/images</code>
    *
-   * @see GriefConstants#RESOURCE_PROP_BASEDIR_RESOURCES
-   * @see GriefConstants#RESOURCE_PROP_VERSIONDIR_PREFIX
+   * @see GriefTaglibProperty#RESOURCE_PROP_BASEDIR_RESOURCES
+   * @see GriefTaglibProperty#RESOURCE_PROP_VERSIONDIR_PREFIX
    * @see Image
    * @see Script
    * @see Style
@@ -281,8 +239,8 @@ public final class GriefConstants {
    * Example: <br>
    * <code>grief.resource.dir.image=/images</code>
    *
-   * @see GriefConstants#RESOURCE_PROP_BASEDIR_RESOURCES
-   * @see GriefConstants#RESOURCE_PROP_VERSIONDIR_PREFIX
+   * @see GriefTaglibProperty#RESOURCE_PROP_BASEDIR_RESOURCES
+   * @see GriefTaglibProperty#RESOURCE_PROP_VERSIONDIR_PREFIX
    * @see Image
    * @see Script
    * @see Style

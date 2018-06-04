@@ -1,4 +1,4 @@
-package de.kodestruktor.grief.core.tag;
+package de.kodestruktor.grief.taglib.tag;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.tags.RequestContextAwareTag;
 
-import de.kodestruktor.grief.core.util.ConfigurationUtil;
-import de.kodestruktor.grief.core.util.GriefConstants;
+import de.kodestruktor.grief.taglib.property.GriefTaglibProperty;
+import de.kodestruktor.grief.taglib.util.ConfigurationUtil;
 
 /**
  * Taglib to create a revision dependent link tag.<br>
@@ -50,7 +50,7 @@ public class Style extends RequestContextAwareTag {
     final String path = ConfigurationUtil.buildStylePath(this.getRequestContext(), this.pageContext, this.uri,
         StringUtils.equalsIgnoreCase(this.staticResource, "true"));
 
-    result = String.format(GriefConstants.RESOURCE_TAG_STYLE, path, this.id);
+    result = String.format(GriefTaglibProperty.RESOURCE_TAG_STYLE, path, this.id);
 
     final JspWriter out = this.pageContext.getOut();
     try {

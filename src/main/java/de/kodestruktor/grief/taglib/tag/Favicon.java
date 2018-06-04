@@ -1,4 +1,4 @@
-package de.kodestruktor.grief.core.tag;
+package de.kodestruktor.grief.taglib.tag;
 
 import java.io.IOException;
 import java.util.Map.Entry;
@@ -12,8 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.tags.RequestContextAwareTag;
 
-import de.kodestruktor.grief.core.util.ConfigurationUtil;
-import de.kodestruktor.grief.core.util.GriefConstants;
+import de.kodestruktor.grief.taglib.property.GriefTaglibProperty;
+import de.kodestruktor.grief.taglib.util.ConfigurationUtil;
 
 /**
  * Taglib to create a revision dependent link/favicon tag.<br>
@@ -30,10 +30,10 @@ import de.kodestruktor.grief.core.util.GriefConstants;
  * <br>
  * <code>&lt;link href='/[rootPath]/resources/static/images/icon.ico' rel='icon' type='image/x-icon' /&gt;</code><br>
  * <br>
- * Also see {@link GriefConstants} for configuration options to manipulate the resource directories.
+ * Also see {@link GriefTaglibProperty} for configuration options to manipulate the resource directories.
  *
  * @author Christoph Wende
- * @see GriefConstants
+ * @see GriefTaglibProperty
  */
 public class Favicon extends RequestContextAwareTag {
 
@@ -54,19 +54,19 @@ public class Favicon extends RequestContextAwareTag {
   public int doEndTag() throws JspException {
     this.init();
     String result = "";
-    String mimeType = GriefConstants.FAVICON_DEFAULT_MIME_TYPE;
+    String mimeType = GriefTaglibProperty.FAVICON_DEFAULT_MIME_TYPE;
 
     final String path = ConfigurationUtil.buildImagePath(this.getRequestContext(), this.pageContext, this.uri,
         StringUtils.equalsIgnoreCase(this.staticResource, "true"));
 
-    for (final Entry<Pattern, String> mimeEntry : GriefConstants.FAVICON_MIME_TYPES.entrySet()) {
+    for (final Entry<Pattern, String> mimeEntry : GriefTaglibProperty.FAVICON_MIME_TYPES.entrySet()) {
       if (mimeEntry.getKey().matcher(this.uri).matches()) {
         mimeType = mimeEntry.getValue();
         break;
       }
     }
 
-    result = String.format(GriefConstants.RESOURCE_TAG_FAVICON, path, mimeType);
+    result = String.format(GriefTaglibProperty.RESOURCE_TAG_FAVICON, path, mimeType);
 
     final JspWriter out = this.pageContext.getOut();
     try {

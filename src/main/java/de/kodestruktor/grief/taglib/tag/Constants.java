@@ -1,4 +1,4 @@
-package de.kodestruktor.grief.core.tag;
+package de.kodestruktor.grief.taglib.tag;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;

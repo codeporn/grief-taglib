@@ -1,4 +1,4 @@
-package de.kodestruktor.grief.core.util;
+package de.kodestruktor.grief.taglib.util;
 
 import java.util.jar.Manifest;
 
@@ -7,6 +7,10 @@ import javax.servlet.jsp.PageContext;
 
 import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.support.RequestContext;
+
+import de.kodestruktor.grief.core.manifest.ManifestReader;
+import de.kodestruktor.grief.core.property.GriefProperty;
+import de.kodestruktor.grief.taglib.property.GriefTaglibProperty;
 
 /**
  * Utility methods making use of configuration; either the artifact ones or the configuration of the enclosing application.
@@ -30,7 +34,7 @@ public class ConfigurationUtil {
    */
   public static String buildImagePath(final RequestContext requestContext, final PageContext pageContext, final String uri,
       final boolean staticResource) {
-    return buildResourcePath(requestContext, pageContext, GriefConstants.RESOURCE_PROP_IMAGEDIR, uri, staticResource);
+    return buildResourcePath(requestContext, pageContext, GriefTaglibProperty.RESOURCE_PROP_IMAGEDIR, uri, staticResource);
   }
 
   /**
@@ -48,7 +52,7 @@ public class ConfigurationUtil {
    */
   public static String buildScriptPath(final RequestContext requestContext, final PageContext pageContext, final String uri,
       final boolean staticResource) {
-    return buildResourcePath(requestContext, pageContext, GriefConstants.RESOURCE_PROP_SCRIPTDIR, uri, staticResource);
+    return buildResourcePath(requestContext, pageContext, GriefTaglibProperty.RESOURCE_PROP_SCRIPTDIR, uri, staticResource);
   }
 
   /**
@@ -66,7 +70,7 @@ public class ConfigurationUtil {
    */
   public static String buildStylePath(final RequestContext requestContext, final PageContext pageContext, final String uri,
       final boolean staticResource) {
-    return buildResourcePath(requestContext, pageContext, GriefConstants.RESOURCE_PROP_STYLEDIR, uri, staticResource);
+    return buildResourcePath(requestContext, pageContext, GriefTaglibProperty.RESOURCE_PROP_STYLEDIR, uri, staticResource);
   }
 
   /**
@@ -90,13 +94,13 @@ public class ConfigurationUtil {
 
     final Environment env = requestContext.getWebApplicationContext().getEnvironment();
 
-    final String rootPath = env.getProperty(GriefConstants.GRIEF_PROP_APP_ROOT);
+    final String rootPath = env.getProperty(GriefProperty.GRIEF_PROP_APP_ROOT);
 
-    final String resourceLocation = env.getProperty(GriefConstants.RESOURCE_PROP_BASEDIR_RESOURCES);
-    final String staticLocation = env.getProperty(GriefConstants.RESOURCE_PROP_BASEDIR_STATIC);
-    final String revisionLocationPrefix = env.getProperty(GriefConstants.RESOURCE_PROP_VERSIONDIR_PREFIX);
+    final String resourceLocation = env.getProperty(GriefTaglibProperty.RESOURCE_PROP_BASEDIR_RESOURCES);
+    final String staticLocation = env.getProperty(GriefTaglibProperty.RESOURCE_PROP_BASEDIR_STATIC);
+    final String revisionLocationPrefix = env.getProperty(GriefTaglibProperty.RESOURCE_PROP_VERSIONDIR_PREFIX);
     final String relativeResourceLocation = env.getProperty(relativeLocationProp);
-    final String revision = ManifestUtil.getImplementationBuild((HttpServletRequest) pageContext.getRequest());
+    final String revision = ManifestReader.getImplementationVersion((HttpServletRequest) pageContext.getRequest());
 
     final StringBuffer path = new StringBuffer();
 

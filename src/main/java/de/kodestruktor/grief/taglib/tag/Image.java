@@ -1,4 +1,4 @@
-package de.kodestruktor.grief.core.tag;
+package de.kodestruktor.grief.taglib.tag;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.tags.RequestContextAwareTag;
 
-import de.kodestruktor.grief.core.util.ConfigurationUtil;
-import de.kodestruktor.grief.core.util.GriefConstants;
+import de.kodestruktor.grief.taglib.property.GriefTaglibProperty;
+import de.kodestruktor.grief.taglib.util.ConfigurationUtil;
 
 /**
  * Taglib to create a revision dependent image tag.<br>
@@ -27,10 +27,10 @@ import de.kodestruktor.grief.core.util.GriefConstants;
  * <br>
  * <code>&lt;img src='/[rootPath]/resources/static/images/image.jpg' alt='[alt]' title='[title]' class='[cssClass]' id='[id]' /&gt;</code><br>
  * <br>
- * Also see {@link GriefConstants} for configuration options to manipulate the resource directories.
+ * Also see {@link GriefTaglibProperty} for configuration options to manipulate the resource directories.
  *
  * @author Christoph Wende
- * @see GriefConstants
+ * @see GriefTaglibProperty
  */
 public class Image extends RequestContextAwareTag {
 
@@ -67,7 +67,7 @@ public class Image extends RequestContextAwareTag {
     final String path = ConfigurationUtil.buildImagePath(this.getRequestContext(), this.pageContext, this.uri,
         StringUtils.equalsIgnoreCase(this.staticResource, "true"));
 
-    result = String.format(GriefConstants.RESOURCE_TAG_IMAGE, path, this.alt, this.title, this.cssClass, this.id);
+    result = String.format(GriefTaglibProperty.RESOURCE_TAG_IMAGE, path, this.alt, this.title, this.cssClass, this.id);
 
     final JspWriter out = this.pageContext.getOut();
     try {

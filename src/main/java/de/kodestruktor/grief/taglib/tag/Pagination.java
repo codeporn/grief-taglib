@@ -1,4 +1,4 @@
-package de.kodestruktor.grief.core.tag;
+package de.kodestruktor.grief.taglib.tag;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.web.servlet.support.RequestContextUtils;
 import org.springframework.web.servlet.tags.RequestContextAwareTag;
 
-import de.kodestruktor.grief.core.util.GriefConstants;
+import de.kodestruktor.grief.taglib.property.GriefTaglibProperty;
 
 /**
  * Taglib which creates a ul/li pagination with the help of a given {@link Page} object. The pagination has a previous/next link and a list of all
@@ -41,17 +41,17 @@ public class Pagination<T> extends RequestContextAwareTag {
 
   private Page<T> page;
 
-  private String prevCode = GriefConstants.PAGINATION_PROP_PREV;
+  private String prevCode = GriefTaglibProperty.PAGINATION_PROP_PREV;
 
-  private String nextCode = GriefConstants.PAGINATION_PROP_NEXT;
+  private String nextCode = GriefTaglibProperty.PAGINATION_PROP_NEXT;
 
   private String uri;
 
   private String cssClass;
 
-  private String pageSizeParam = GriefConstants.PAGINATION_PAGE_SIZE_PARAMETER;
+  private String pageSizeParam = GriefTaglibProperty.PAGINATION_PAGE_SIZE_PARAMETER;
 
-  private String pageNumberParam = GriefConstants.PAGINATION_PAGE_NUMBER_PARAMETER;
+  private String pageNumberParam = GriefTaglibProperty.PAGINATION_PAGE_NUMBER_PARAMETER;
 
   @SuppressWarnings("resource")
   @Override

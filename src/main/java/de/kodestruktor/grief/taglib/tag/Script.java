@@ -1,4 +1,4 @@
-package de.kodestruktor.grief.core.tag;
+package de.kodestruktor.grief.taglib.tag;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.tags.RequestContextAwareTag;
 
-import de.kodestruktor.grief.core.util.ConfigurationUtil;
-import de.kodestruktor.grief.core.util.GriefConstants;
+import de.kodestruktor.grief.taglib.property.GriefTaglibProperty;
+import de.kodestruktor.grief.taglib.util.ConfigurationUtil;
 
 /**
  * Taglib to create a revision dependent script tag.<br>
@@ -53,8 +53,8 @@ public class Script extends RequestContextAwareTag {
         StringUtils.equalsIgnoreCase(this.staticResource, "true"));
 
     result = String.format(
-        StringUtils.equalsIgnoreCase(this.async, "true") ? GriefConstants.RESOURCE_TAG_SCRIPT_ASYNC : GriefConstants.RESOURCE_TAG_SCRIPT, path,
-        this.id);
+        StringUtils.equalsIgnoreCase(this.async, "true") ? GriefTaglibProperty.RESOURCE_TAG_SCRIPT_ASYNC : GriefTaglibProperty.RESOURCE_TAG_SCRIPT,
+        path, this.id);
 
     final JspWriter out = this.pageContext.getOut();
     try {

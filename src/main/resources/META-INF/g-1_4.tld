@@ -4,16 +4,16 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
     version="2.1">
      
-  <description>good grief Core tags</description>
-  <display-name>good grief Core</display-name>
-  <tlib-version>1.2</tlib-version>
+  <description>good grief taglib</description>
+  <display-name>good grief taglib</display-name>
+  <tlib-version>1.4</tlib-version>
   <short-name>g</short-name>
-  <uri>http://grief.kodestruktor.de/core</uri>
+  <uri>http://grief.kodestruktor.de/taglib</uri>
 
   <tag>
     <description>Renders a link tag pointing to a static or dynamically versioned resource.</description>
     <name>style</name>
-    <tag-class>de.kodestruktor.grief.core.tag.Style</tag-class>
+    <tag-class>de.kodestruktor.grief.taglib.tag.Style</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <description>The relative path to the stylesheet located in /src/main/webapp/[resources dir]/[static/revision dir]/[style dir]</description>
@@ -38,7 +38,7 @@
   <tag>
     <description>Renders a script tag pointing to a static or dynamically versioned resource.</description>
     <name>script</name>
-    <tag-class>de.kodestruktor.grief.core.tag.Script</tag-class>
+    <tag-class>de.kodestruktor.grief.taglib.tag.Script</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <description>The relative path to the script file located in /src/main/webapp/[resources dir]/[static/revision dir]/[script dir]</description>
@@ -69,7 +69,7 @@
   <tag>
     <description>Renders an image tag pointing to a static or dynamically versioned resource.</description>
     <name>image</name>
-    <tag-class>de.kodestruktor.grief.core.tag.Image</tag-class>
+    <tag-class>de.kodestruktor.grief.taglib.tag.Image</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <description>The relative path to the image file located in /src/main/webapp/[resources dir]/[static/revision dir]/[image dir]</description>
@@ -112,7 +112,7 @@
   <tag>
     <description>Renders a favicon tag pointing to a static or dynamically versioned resource.</description>
     <name>favicon</name>
-    <tag-class>de.kodestruktor.grief.core.tag.Favicon</tag-class>
+    <tag-class>de.kodestruktor.grief.taglib.tag.Favicon</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <description>The relative path to the icon file located in /src/main/webapp/[resources dir]/[static/revision dir]/[image dir]</description>
@@ -131,7 +131,7 @@
   <tag>
     <description>Provides all constants of a given class in a variable.</description>
     <name>constants</name>
-    <tag-class>de.kodestruktor.grief.core.tag.Constants</tag-class>
+    <tag-class>de.kodestruktor.grief.taglib.tag.Constants</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <description>The name of the class whose constants to expose.</description>
@@ -150,7 +150,7 @@
   <tag>
     <description>A pagination snippet generated for passed Spring Data page objects.</description>
     <name>pagination</name>
-    <tag-class>de.kodestruktor.grief.core.tag.Pagination</tag-class>
+    <tag-class>de.kodestruktor.grief.taglib.tag.Pagination</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <description>The Spring Data page object, containing the paged content and it'S boundaries.</description>
@@ -205,7 +205,7 @@
   <tag>
     <description>Renders the configured version number and/or revision.</description>
     <name>version</name>
-    <tag-class>de.kodestruktor.grief.core.tag.Version</tag-class>
+    <tag-class>de.kodestruktor.grief.taglib.tag.Version</tag-class>
     <body-content>empty</body-content>
     <attribute>
       <description>Defines how the information will be rendered. Options are 'meta', 'content' or 'comment'.</description>

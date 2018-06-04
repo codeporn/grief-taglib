@@ -1,4 +1,4 @@
-package de.kodestruktor.grief.core.tag;
+package de.kodestruktor.grief.taglib.tag;
 
 import java.io.IOException;
 
@@ -12,8 +12,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
 import org.springframework.web.servlet.tags.RequestContextAwareTag;
 
-import de.kodestruktor.grief.core.util.GriefConstants;
-import de.kodestruktor.grief.core.util.ManifestUtil;
+import de.kodestruktor.grief.core.manifest.ManifestReader;
+import de.kodestruktor.grief.core.property.GriefProperty;
+import de.kodestruktor.grief.taglib.property.GriefTaglibProperty;
 
 /**
  * Renders the applications version and/or revision based on the parameters set.
@@ -48,18 +49,18 @@ public class Version extends RequestContextAwareTag {
   private void init() {
     final Environment env = this.getRequestContext().getWebApplicationContext().getEnvironment();
 
-    this.version = env.getProperty(GriefConstants.GRIEF_PROP_APP_VERSION);
+    this.version = env.getProperty(GriefProperty.GRIEF_PROP_APP_VERSION);
 
     if (StringUtils.isBlank(this.version)) {
-      this.version = ManifestUtil.getImplementationVersion((HttpServletRequest) this.pageContext.getRequest());
+      this.version = ManifestReader.getSpecificationVersion((HttpServletRequest) this.pageContext.getRequest());
     }
 
-    this.revision = ManifestUtil.getImplementationBuild((HttpServletRequest) this.pageContext.getRequest());
+    this.revision = ManifestReader.getImplementationVersion((HttpServletRequest) this.pageContext.getRequest());
 
-    this.tagEnabled = env.getProperty(GriefConstants.VERSION_PROP_ENABLED, Boolean.class, Boolean.FALSE).booleanValue();
-    this.metaEnabled = env.getProperty(GriefConstants.VERSION_PROP_META_ENABLED, Boolean.class, Boolean.FALSE).booleanValue();
-    this.contentEnabled = env.getProperty(GriefConstants.VERSION_PROP_CONTENT_ENABLED, Boolean.class, Boolean.FALSE).booleanValue();
-    this.commentEnabled = env.getProperty(GriefConstants.VERSION_PROP_COMMENT_ENABLED, Boolean.class, Boolean.FALSE).booleanValue();
+    this.tagEnabled = env.getProperty(GriefTaglibProperty.VERSION_PROP_ENABLED, Boolean.class, Boolean.FALSE).booleanValue();
+    this.metaEnabled = env.getProperty(GriefTaglibProperty.VERSION_PROP_META_ENABLED, Boolean.class, Boolean.FALSE).booleanValue();
+    this.contentEnabled = env.getProperty(GriefTaglibProperty.VERSION_PROP_CONTENT_ENABLED, Boolean.class, Boolean.FALSE).booleanValue();
+    this.commentEnabled = env.getProperty(GriefTaglibProperty.VERSION_PROP_COMMENT_ENABLED, Boolean.class, Boolean.FALSE).booleanValue();
   }
 
   /**
@@ -78,31 +79,31 @@ public class Version extends RequestContextAwareTag {
 
       switch (this.type + "_" + this.style) {
         case "version_meta":
-          result = String.format(GriefConstants.VERSION_TAG_META_SIMPLE, "Version", this.version);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_META_SIMPLE, "Version", this.version);
           break;
         case "revision_meta":
-          result = String.format(GriefConstants.VERSION_TAG_META_SIMPLE, "Revision", this.revision);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_META_SIMPLE, "Revision", this.revision);
           break;
         case "both_meta":
-          result = String.format(GriefConstants.VERSION_TAG_META_COMBINED, "Version", this.version, this.revision);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_META_COMBINED, "Version", this.version, this.revision);
           break;
         case "version_content":
-          result = String.format(GriefConstants.VERSION_TAG_CONTENT_SIMPLE, "version", "Version", this.version);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_CONTENT_SIMPLE, "version", "Version", this.version);
           break;
         case "revision_content":
-          result = String.format(GriefConstants.VERSION_TAG_CONTENT_SIMPLE, "revision", "Revision", this.revision);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_CONTENT_SIMPLE, "revision", "Revision", this.revision);
           break;
         case "both_content":
-          result = String.format(GriefConstants.VERSION_TAG_CONTENT_COMBINED, "version", "Version", this.version, this.revision);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_CONTENT_COMBINED, "version", "Version", this.version, this.revision);
           break;
         case "version_comment":
-          result = String.format(GriefConstants.VERSION_TAG_COMMENT_SIMPLE, "version", this.version);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_COMMENT_SIMPLE, "version", this.version);
           break;
         case "revision_comment":
-          result = String.format(GriefConstants.VERSION_TAG_COMMENT_SIMPLE, "revision", this.revision);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_COMMENT_SIMPLE, "revision", this.revision);
           break;
         case "both_comment":
-          result = String.format(GriefConstants.VERSION_TAG_COMMENT_COMBINED, "Version", this.version, this.revision);
+          result = String.format(GriefTaglibProperty.VERSION_TAG_COMMENT_COMBINED, "Version", this.version, this.revision);
           break;
         default:
           break;
